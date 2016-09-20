@@ -1,0 +1,9 @@
+<h3>Angular2 observables demo</h3>
+<input type="text" #term (keyup)="search(term.value)" />
+<div *ngFor="let item of items | async">
+    <a href="https://ww.youtube.com/watch?v={{item.id.videoId}}" target="_blank">
+        <h3>{{item.snippet.title}}</h3>
+    </a>
+    <p>{{item.snippet.description}}</p>
+    <img [src]="item.snippet.thumbnails.default.url" style="width: 100%; max-width: 250px;" />
+</div>
